@@ -1,0 +1,18 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@{
+    Layout = Paths.Views.Layout.DetailWithSideMenu;
+    var data = Model.Data as List<E_Mikro.Models.Contentful.Video>;
+}
+
+<div class="row">
+    @foreach (var item in data)
+    {
+        <div class="videoItem col-4 col-l-6 col-m-12">
+            <video controls poster="@(item.VideoPoster.Fields.File.Url)">
+                <source src="@(!String.IsNullOrEmpty(item.VideoUrl) ? item.VideoUrl : item.VideoFile.Fields.File.Url)" type="video/mp4">
+                Your browser does not support HTML5 video.
+            </video>
+            <div class="text">@Html.Raw(item.Title)</div>
+        </div>
+    }
+</div>

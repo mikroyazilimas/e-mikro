@@ -1,0 +1,230 @@
+.field-error {
+ label.error{
+  color: @red !important;
+  font-size: 12px;
+ }
+ label.title {
+  color: @red !important;
+ }
+ input, textarea {
+  border-color: @red !important;
+ }
+}
+.registerArea {
+ width: 1170px;
+ max-width: 100%;
+ padding: 20px 10px;
+ box-sizing: border-box;
+ margin: 0px auto;
+ .left {
+  background: @white;
+  border-radius: 20px;
+  width: 70%;
+  float: left;
+  padding: 30px;
+  box-sizing: border-box;
+  .recaptcha {
+   float: left;
+   margin-top: 20px;
+  }
+  .btn {
+   float: right;
+   margin-top: 20px;
+  }
+  .loginBtn {
+   font-size: 20px;
+   display: inline-block;
+   padding: 3px 10px;
+   cursor: pointer;
+   box-sizing: border-box;
+   font-weight: 300;
+  }
+  .registerBtn {
+   font-size: 20px;
+   font-weight: bold;
+   cursor: pointer;
+   border-left: 1px solid @darkGrey;
+   padding: 3px 10px;
+   box-sizing: border-box;
+   display: inline-block;
+   position: relative;;
+   &:after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: @black;
+    bottom: -5px;
+    position: absolute;
+   }
+  }
+  form {
+   margin-top: 40px;
+  }
+  .checkArea {
+   margin-top: 15px;
+   color: #38485C;
+   a {
+    font-weight: bold;
+    text-decoration: underline;
+    color: #38485C;
+   }
+  }
+  label.error{
+   color: @red;
+   font-size: 12px;
+  }
+  .form-element {
+   margin-bottom: 10px;
+   &.field-error {
+    label.error{
+     color: @red;
+     font-size: 12px;
+    }
+    label.title {
+     color: @red;
+    }
+    input, textarea {
+     border-color: @red;
+    }
+   }
+   label.title {
+    color: @darkBlue;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+   }
+   input {
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #CBCBCB;
+    padding: 11px 5px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+   }
+  }
+  .form-group {
+   .form-element {
+    width: calc(50% - 5px);
+    float: left;
+    &:nth-child(1) {
+     margin-right: 5px;
+    }
+    &:nth-child(2) {
+     margin-left: 5px;
+    }
+   }
+   &:after {
+    .clear;
+   }
+  }
+ }
+ .right {
+  width: 30%;
+  float: left;
+ color: @darkBlue;
+ margin-top: 70px;
+ .topText {
+  background: #E0E2E3;
+  -webkit-border-top-right-radius: 20px;
+  -moz-border-radius-topright: 20px;
+  border-top-right-radius: 20px;
+  box-sizing: border-box;
+  padding: 17px 16px 10px 15px;
+ }
+ img {
+  width: 5px;
+  display: inline-block;
+  padding-top: 7px;
+  padding-right: 5px;
+ }
+ .bottomText {
+  background: #D3D5D6;
+  -webkit-border-bottom-right-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  border-bottom-right-radius: 20px; 
+  box-sizing: border-box;
+  padding: 17px 16px 15px 15px;
+  h4 {
+   font-size: 20px;
+  }
+  a {
+   color: @darkBlue;
+  }
+ }
+
+ }
+ &:after {
+  .clear;
+ }
+ @media screen and (min-width: 0px) and (max-width: 1020px) {
+ .left {
+  float: none;
+  width: 100%;
+ }
+ .right {
+  float: none;
+  width: 90%;
+  margin: 0px auto 0px auto;
+
+  .topText {
+   border-radius: 0px;
+  }
+  .bottomText {
+   border-radius: 0px;
+   -webkit-border-bottom-right-radius: 20px;
+  -webkit-border-bottom-left-radius: 20px;
+  -moz-border-radius-bottomright: 20px;
+  -moz-border-radius-bottomleft: 20px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  }
+ }
+ }
+ @media screen and (min-width: 0px) and (max-width: 580px) {
+ .left {
+  padding: 10px;
+  width: 100%;
+  border-radius: 0px;
+  -webkit-border-top-left-radius: 20px;
+ -webkit-border-top-right-radius: 20px;
+ -moz-border-radius-topleft: 20px;
+ -moz-border-radius-topright: 20px;
+ border-top-left-radius: 20px;
+ border-top-right-radius: 20px;
+ .recaptcha {
+  float: none;
+  width: 305px;
+  margin: 20px auto 10px auto;
+ }
+ .btn {
+  float: none;
+  display: table;
+  margin: 10px auto;
+ }
+ .form-group {
+  .form-element {
+   float: none;
+   width: 100%;
+   &:nth-child(1) {
+    margin-right: 0px;
+   }
+   &:nth-child(2) {
+    margin-left: 0px;
+   }
+  }
+ }
+
+ }
+  .right {
+  width: 100%;
+ }
+ }
+}
+
+
+ input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}

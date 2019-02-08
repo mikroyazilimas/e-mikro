@@ -1,0 +1,80 @@
+﻿@using E_Mikro.Models.Contentful;
+@{
+    var menu = ViewBag.Menu as List<Menu>;
+    var products = ViewBag.Products as List<Product>;
+}
+
+@helper RenderRootLevelNode(Menu item, List<Product> products)
+{
+    <h3 @(!String.IsNullOrEmpty(item.Link) ? Html.Raw("onclick=\"location.href='" + item.Link + "'\" style=\"cursor:pointer\"") : Html.Raw(""))>
+        @(item.Title)
+    </h3>
+    if (item.Pages != null && item.Pages.Count > 0)
+    {
+        <div class="link">
+            @foreach (var page in item.Pages)
+            {
+                <a href="@page.Url">@(page.Title.ToUpper(new System.Globalization.CultureInfo("tr-TR")))</a>
+            }
+            @if (item.IsHaveProducts)
+            {
+                <div class="link">
+                    @foreach (var product in products)
+                    {
+                        if (!String.IsNullOrEmpty(product.ExternalLink))
+                        {
+                            <a target="_blank" href="@product.ExternalLink">@(product.Name)</a>
+                        }
+                        else
+                        {
+                            <a href="@product.Url">@(product.Name)</a>
+                        }
+                    }
+                </div>
+            }
+        </div>
+    }
+    else if (item.IsHaveProducts)
+    {
+        <div class="link">
+            @foreach (var product in products)
+            {
+                <a href="@product.Url">@(product.Name)</a>
+            }
+        </div>
+    }
+    else if (item.WebLinks != null && item.WebLinks.Count > 0)
+    {
+        <div class="link">
+            @foreach (var link in item.WebLinks)
+            {
+                <a href="@link" target="_blank">@(link.Replace("https://", "").Replace("http://", ""))</a>
+            }
+        </div>
+    }
+}
+
+<ul class="menu">
+    @for (int i = 0; i < menu.Count; i++)
+    {
+        var item = menu[i];
+        <li>
+            @RenderRootLevelNode(item, products)
+            @if (i == 2)
+            {
+                i = i + 1;
+                item = menu[i];
+                @RenderRootLevelNode(item, products)
+            }
+        </li>
+    }
+    <li>
+        <div class="link">
+            <h3>E-MİKRO DESTEK HATTI</h3>
+            <h3><a href="tel:08502251010">0850 225 1010</a></h3>
+        </div>
+    </li>
+    <li class="yerliUretim">
+        <img src="/assets/images/yerli-uretim.png">
+    </li>
+</ul>

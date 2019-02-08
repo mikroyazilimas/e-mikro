@@ -1,0 +1,103 @@
+// + footer social link
+.socialLink {
+ background: @black;
+ &.fix {
+  position: fixed;
+  width: 100%;
+  bottom: 29px;
+ }
+ .content {
+  max-width: 1170px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0px auto;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  background: url(../images/icon/yerli-uretim.svg) no-repeat right center;
+  background-size: 117px;
+  a {
+   display: block;
+   width: 30px;
+   margin: 0px 10px;
+   img {
+    width: 100%;
+   }
+  }
+ }
+ @media screen and (min-width: 0px) and (max-width: 580px) {
+  .content {
+   background: none;
+  }
+ }
+}
+// - footer social link
+
+// + footer 
+footer {
+ background: @red;
+ &.fix {
+  position: fixed;
+  width: 100%;
+  bottom: 0px;
+ }
+ .content {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0px auto;
+  padding: 5px 0px;
+  box-sizing: border-box;
+  color: @white;
+  .text {
+   float: left;
+  }
+   ul.link {
+    float: right;
+   li {
+    margin-left: 20px;
+    float: left;
+    &:after {
+     .clear;
+    }
+    a {
+     display: block;
+     color: @white;
+    }
+   }
+  }
+  &:after {
+   .clear;
+  }
+ }
+
+ @media screen and (min-width: 0px) and (max-width: 1040px) {
+  .content {
+   .text {
+    text-align: center;
+    width: 100%;
+    float: none;
+    padding: 7px 0px;
+   }
+   ul.link {
+    float: none;
+    width: 100%;
+    background: #3B3B3B;
+    li {
+     &:nth-child(1) { background: #242424; }
+     &:nth-child(2) { background: #242424; }
+     width: 50%;
+     margin: 0px;
+     padding: 15px 0px;
+     min-height: 25px;
+     text-align: center;
+    }
+    &:after {
+     .clear;
+    }
+   }
+  }
+ }
+}
+
+// - footer
+

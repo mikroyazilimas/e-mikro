@@ -1,0 +1,37 @@
+Mail Gönderirken hata oluştu <br> <html>
+<head>
+</head>
+<body>
+    <table>
+
+        <tr>
+            <td>Ad:</td>
+            <td>emre</td>
+        </tr>
+        <tr>
+            <td>Soyad:</td>
+            <td>gültekin</td>
+        </tr>
+        <tr>
+            <td>Telefon:</td>
+            <td>05554443322</td>
+        </tr>
+        <tr>
+            <td>Firma Ünvanı:</td>
+            <td>ph reklam</td>
+        </tr>
+        <tr>
+            <td>Mesaj:</td>
+            <td>test mesajıdır.</td>
+        </tr>
+        <tr>
+            <td>E-Posta:</td>
+            <td>test@ph.com.tr</td>
+        </tr>
+    </table>
+</body>
+</html>
+System.ArgumentOutOfRangeException: Index and length must refer to a location within the string.
+Parameter name: length
+   at System.String.Substring(Int32 startIndex, Int32 length)
+   at E_Mikro.Controllers.FormController.ContactFormSalesForce(ContactForm model) in D:\CS Projects\Github\E-Mikro\E-Mikro\Controllers\FormController.cs:line 61 - 9.1.2019 15:36:21

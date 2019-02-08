@@ -1,0 +1,87 @@
+.btn {
+ padding: 15px 35px;
+ box-sizing: border-box;
+ border-radius: 5px;
+ display: inline-block;
+ width: auto;
+ .pointer;
+ font-size: 14px;
+ line-height: 14px;
+ img {
+  padding: 0px;
+  width: 15px;
+  margin: 1px 0px 0px 5px;
+  display: inline-block;
+ }
+ &.center {
+  margin: 0px auto;
+  display: table;
+ }
+ &.purple {
+  background: @purple;
+  color: @white;
+ }
+ &.grey {
+  background: #98A4A6;
+  color: @white;
+ }
+ &.blue {
+  background:#3D4758;
+  color: @white !important;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 2px 0px 1px rgba(235,235,235,1);
+  -moz-box-shadow: 0px 2px 0px 1px rgba(235,235,235,1);
+  box-shadow: 0px 2px 0px 1px rgba(235,235,235,1);
+ }
+ &.white {
+  background: @white;
+  color: #1F1E1E;
+  position: relative;
+  &.leftArrow {
+   &:after, &:before {
+    right: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+   }
+   
+   &:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-right-color: @white;
+    border-width: 10px;
+    margin-top: -10px;
+   }
+   &:before {
+    border-color: rgba(194, 225, 245, 0);
+    border-right-color: @white;
+    border-width: 11px;
+    margin-top: -11px;
+   }
+  }
+ }
+ &.gPurple {
+  color: #fff;
+  font-size: 16px;
+  background: #de6bfc; /* Old browsers */
+  background: -moz-linear-gradient(top, #de6bfc 0%, #ac29cd 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #de6bfc 0%,#ac29cd 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #de6bfc 0%,#ac29cd 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de6bfc', endColorstr='#ac29cd',GradientType=0 ); /* IE6-9 */
+  &:hover {
+   background: #ac29cd; /* Old browsers */
+   background: -moz-linear-gradient(top, #ac29cd 0%, #de6bfc 100%); /* FF3.6-15 */
+   background: -webkit-linear-gradient(top, #ac29cd 0%,#de6bfc 100%); /* Chrome10-25,Safari5.1-6 */
+   background: linear-gradient(to bottom, #ac29cd 0%,#de6bfc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ac29cd', endColorstr='#de6bfc',GradientType=0 ); /* IE6-9 */
+  }
+ }
+}
+.textLink {
+ font-weight: bold;
+ color: @darkBlue;
+ text-decoration: underline;
+}

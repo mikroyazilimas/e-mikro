@@ -1,0 +1,403 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2902CEA4-B359-4062-BF60-64545092D493}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>E_Mikro</RootNamespace>
+    <AssemblyName>E-Mikro</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Contentful.Core, Version=3.6.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\contentful.csharp.3.6.1\lib\netstandard2.0\Contentful.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net461\System.Security.Cryptography.Algorithms.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Telerik.Sitefinity.DropboxLibraries, Version=10.2.6602.0, Culture=neutral, PublicKeyToken=b28c218413bdf563, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Telerik.Sitefinity.DropboxLibraries.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\images\bg\about.png" />
+    <Content Include="Assets\images\bg\computer.svg" />
+    <Content Include="Assets\images\bg\home-maps.jpg" />
+    <Content Include="Assets\images\bg\home-maps.png" />
+    <Content Include="Assets\images\bg\homeAbout-01.svg" />
+    <Content Include="Assets\images\bg\homeAbout-02.svg" />
+    <Content Include="Assets\images\bg\homeAbout-03.svg" />
+    <Content Include="Assets\images\bg\login.jpg" />
+    <Content Include="Assets\images\bg\platform-mobile.jpg" />
+    <Content Include="Assets\images\bg\platform.jpg" />
+    <Content Include="Assets\images\bg\platform.png" />
+    <Content Include="Assets\images\bg\productLightBox.png" />
+    <Content Include="Assets\images\bg\urunler.jpg" />
+    <Content Include="Assets\images\bg\video.jpg" />
+    <Content Include="Assets\images\bg\video.png" />
+    <Content Include="Assets\images\header-logo.png" />
+    <Content Include="Assets\images\header-logo.svg" />
+    <Content Include="Assets\images\homeBanner\01-m.jpg" />
+    <Content Include="Assets\images\homeBanner\01.jpg" />
+    <Content Include="Assets\images\homeBanner\02-m.jpg" />
+    <Content Include="Assets\images\homeBanner\02.jpg" />
+    <Content Include="Assets\images\icon\404.svg" />
+    <Content Include="Assets\images\icon\about-conect.svg" />
+    <Content Include="Assets\images\icon\about-not-conect.svg" />
+    <Content Include="Assets\images\icon\about-search.svg" />
+    <Content Include="Assets\images\icon\accordion-bottom-arrow.svg" />
+    <Content Include="Assets\images\icon\accordion-bottom.svg" />
+    <Content Include="Assets\images\icon\accordion-top-arrow.svg" />
+    <Content Include="Assets\images\icon\accordion-top.svg" />
+    <Content Include="Assets\images\icon\btn-arrow-black.svg" />
+    <Content Include="Assets\images\icon\btn-arrow-white.svg" />
+    <Content Include="Assets\images\icon\close-white.svg" />
+    <Content Include="Assets\images\icon\close.svg" />
+    <Content Include="Assets\images\icon\dot.svg" />
+    <Content Include="Assets\images\icon\e-mail.svg" />
+    <Content Include="Assets\images\icon\facebook.svg" />
+    <Content Include="Assets\images\icon\home-about-dot.svg" />
+    <Content Include="Assets\images\icon\linkedin.svg" />
+    <Content Include="Assets\images\icon\location.svg" />
+    <Content Include="Assets\images\icon\menu.svg" />
+    <Content Include="Assets\images\icon\mikro-kep-text-bottom.svg" />
+    <Content Include="Assets\images\icon\mikro-kep.svg" />
+    <Content Include="Assets\images\icon\my-e-arsiv-logo.svg" />
+    <Content Include="Assets\images\icon\my-e-arsiv-text-bottom.svg" />
+    <Content Include="Assets\images\icon\my-e-arsiv.svg" />
+    <Content Include="Assets\images\icon\my-e-bordro-text-bottom.svg" />
+    <Content Include="Assets\images\icon\my-e-bordro.svg" />
+    <Content Include="Assets\images\icon\my-e-defter-text-bottom.svg" />
+    <Content Include="Assets\images\icon\my-e-defter.svg" />
+    <Content Include="Assets\images\icon\my-e-mutabakat-text-bottom.svg" />
+    <Content Include="Assets\images\icon\my-e-mutabakat.svg" />
+    <Content Include="Assets\images\icon\my-fatura-text-bottom.svg" />
+    <Content Include="Assets\images\icon\my-fatura-text.svg" />
+    <Content Include="Assets\images\icon\my-irsaliye-text-bottom.svg" />
+    <Content Include="Assets\images\icon\my-irsaliye.svg" />
+    <Content Include="Assets\images\icon\my-lorem-ipsum-dolor-text-bottom.svg" />
+    <Content Include="Assets\images\icon\my-lorem-ipsum-dolor.svg" />
+    <Content Include="Assets\images\icon\my-mustahsil-makbuzu-text-bottom.svg" />
+    <Content Include="Assets\images\icon\my-mustahsil-makbuzu.svg" />
+    <Content Include="Assets\images\icon\my-serbest-meslek-makbuzu-text-bottom.svg" />
+    <Content Include="Assets\images\icon\my-serbest-meslek-makbuzu.svg" />
+    <Content Include="Assets\images\icon\not-found.svg" />
+    <Content Include="Assets\images\icon\phone.svg" />
+    <Content Include="Assets\images\icon\products\mikro-kep.svg" />
+    <Content Include="Assets\images\icon\products\my-e-arsiv.svg" />
+    <Content Include="Assets\images\icon\products\my-e-bordro.svg" />
+    <Content Include="Assets\images\icon\products\my-e-defter.svg" />
+    <Content Include="Assets\images\icon\products\my-e-mutabakat.svg" />
+    <Content Include="Assets\images\icon\products\my-fatura-text.svg" />
+    <Content Include="Assets\images\icon\products\my-irsaliye.svg" />
+    <Content Include="Assets\images\icon\products\my-lorem-ipsum-dolor.svg" />
+    <Content Include="Assets\images\icon\products\my-mustahsil-makbuzu.svg" />
+    <Content Include="Assets\images\icon\products\my-serbest-meslek-makbuzu.svg" />
+    <Content Include="Assets\images\icon\search.svg" />
+    <Content Include="Assets\images\icon\see-dark.svg" />
+    <Content Include="Assets\images\icon\see-white.svg" />
+    <Content Include="Assets\images\icon\slide-arrow-left-mobile.svg" />
+    <Content Include="Assets\images\icon\slide-arrow-left.svg" />
+    <Content Include="Assets\images\icon\slide-arrow-right-mobile.svg" />
+    <Content Include="Assets\images\icon\slide-arrow-right.svg" />
+    <Content Include="Assets\images\icon\twitter.svg" />
+    <Content Include="Assets\images\icon\user.svg" />
+    <Content Include="Assets\images\icon\video-play.svg" />
+    <Content Include="Assets\images\icon\yerli-uretim.svg" />
+    <Content Include="Assets\images\icon\youtube.svg" />
+    <Content Include="Assets\images\login-logo.svg" />
+    <Content Include="Assets\images\menu-logo.png" />
+    <Content Include="Assets\images\yerli-uretim.png" />
+    <Content Include="Assets\scripts\custom.js" />
+    <Content Include="Assets\scripts\general - Copy.js" />
+    <Content Include="Assets\scripts\general.js" />
+    <Content Include="Assets\scripts\jquery.fitvids.js" />
+    <Content Include="Assets\scripts\jquery.min.js" />
+    <Content Include="Assets\scripts\jquery.validate.min.js" />
+    <Content Include="Assets\scripts\lc_switch.min.js" />
+    <Content Include="Assets\scripts\mask\inputmask.date.extensions.js" />
+    <Content Include="Assets\scripts\mask\inputmask.extensions.js" />
+    <Content Include="Assets\scripts\mask\inputmask.js" />
+    <Content Include="Assets\scripts\mask\inputmask.numeric.extensions.js" />
+    <Content Include="Assets\scripts\mask\jquery.inputmask.js" />
+    <Content Include="Assets\scripts\messages_tr.js" />
+    <Content Include="Assets\scripts\owl.carousel.min.js" />
+    <Content Include="Assets\scripts\select2.js" />
+    <Content Include="Assets\styles\custom.css" />
+    <Content Include="Assets\styles\general.css" />
+    <Content Include="Assets\styles\homeSlider.css" />
+    <Content Include="Assets\styles\lc_switch.css" />
+    <Content Include="Assets\styles\owl.carousel.min.css" />
+    <Content Include="Assets\styles\owl.theme.default.min.css" />
+    <Content Include="Assets\styles\select2.css" />
+    <Content Include="Assets\styles\total.css" />
+    <Content Include="Content\Templates\Mail\contact.html" />
+    <Content Include="Content\Templates\Mail\demo-request.html" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Base\BaseController.cs" />
+    <Compile Include="Controllers\CacheController.cs" />
+    <Compile Include="Controllers\FormController.cs" />
+    <Compile Include="Controllers\PageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Library\Contentful\Base.cs" />
+    <Compile Include="Library\Contentful\CmsUrlConstraint.cs" />
+    <Compile Include="Library\Contentful\Delivery\Other.cs" />
+    <Compile Include="Library\Contentful\Delivery\PressRoom.cs" />
+    <Compile Include="Library\Contentful\Delivery\Product.cs" />
+    <Compile Include="Library\Contentful\Delivery\Slider.cs" />
+    <Compile Include="Library\Contentful\Delivery\Navigation.cs" />
+    <Compile Include="Library\Contentful\Delivery\Page.cs" />
+    <Compile Include="Library\Contentful\Management\Form.cs" />
+    <Compile Include="Library\Enums.cs" />
+    <Compile Include="Library\Declarations.cs" />
+    <Compile Include="Library\Contentful\ContentfulAPI.cs" />
+    <Compile Include="Library\Helpers\Cache.cs" />
+    <Compile Include="Library\Helpers\LogProcess.cs" />
+    <Compile Include="Library\Helpers\MailHelper.cs" />
+    <Compile Include="Library\Helpers\Tools.cs" />
+    <Compile Include="Library\SalesForce\RestApiService.cs" />
+    <Compile Include="Library\SalesForce\RestProcess.cs" />
+    <Compile Include="Models\Breadcrumb.cs" />
+    <Compile Include="Models\Contentful\301Redirect.cs" />
+    <Compile Include="Models\KeyValue.cs" />
+    <Compile Include="Models\Contentful\Base\ContentfulBaseModel.cs" />
+    <Compile Include="Models\Contentful\Base\FormBase.cs" />
+    <Compile Include="Models\Contentful\FAQ.cs" />
+    <Compile Include="Models\Contentful\Campaign.cs" />
+    <Compile Include="Models\Contentful\LogoAndImage.cs" />
+    <Compile Include="Models\Contentful\Video.cs" />
+    <Compile Include="Models\Contentful\News.cs" />
+    <Compile Include="Models\Contentful\ProductRequestForm.cs" />
+    <Compile Include="Models\Contentful\ContactForm.cs" />
+    <Compile Include="Models\Contentful\DataModel\DataTarget.cs" />
+    <Compile Include="Models\Contentful\DataModel\KeyValue.cs" />
+    <Compile Include="Models\Contentful\DataModel\Media.cs" />
+    <Compile Include="Models\Contentful\DataModel\RichText.cs" />
+    <Compile Include="Models\Contentful\Menu.cs" />
+    <Compile Include="Models\Contentful\TripleCTA.cs" />
+    <Compile Include="Models\Contentful\Page.cs" />
+    <Compile Include="Models\Contentful\PageCategory.cs" />
+    <Compile Include="Models\Contentful\Product.cs" />
+    <Compile Include="Models\Contentful\Slider.cs" />
+    <Compile Include="Models\Navigation.cs" />
+    <Compile Include="Models\SalesForce\Rest\InputHeader.cs" />
+    <Compile Include="Models\SalesForce\Rest\Input_RequestForm.cs" />
+    <Compile Include="Models\SalesForce\Rest\Input_Token.cs" />
+    <Compile Include="Models\SalesForce\Rest\Output_DemoRequest.cs" />
+    <Compile Include="Models\SalesForce\Rest\Output_Message.cs" />
+    <Compile Include="Models\SalesForce\Rest\Output_Token.cs" />
+    <Compile Include="Models\SearchResult.cs" />
+    <Compile Include="Models\ViewModel\ProductViewModel.cs" />
+    <Compile Include="Models\ViewModel\HomeViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Assets\styles\aboutPage.less" />
+    <Content Include="Assets\styles\accordion.less" />
+    <Content Include="Assets\styles\button.less" />
+    <Content Include="Assets\styles\checkBox.less" />
+    <Content Include="Assets\styles\color.less" />
+    <Content Include="Assets\styles\contentPage.less" />
+    <Content Include="Assets\styles\errorPage.less" />
+    <Content Include="Assets\styles\font.less" />
+    <Content Include="Assets\styles\footer.less" />
+    <Content Include="Assets\styles\general.less" />
+    <Content Include="Assets\styles\grid.less" />
+    <Content Include="Assets\styles\header.less" />
+    <Content Include="Assets\styles\headTitle.less" />
+    <Content Include="Assets\styles\homeContents.less" />
+    <Content Include="Assets\styles\homeSlider.less" />
+    <Content Include="Assets\styles\login.less" />
+    <Content Include="Assets\styles\menu.less" />
+    <Content Include="Assets\styles\productDetail.less" />
+    <Content Include="Assets\styles\productLanding.less" />
+    <Content Include="Assets\styles\register.less" />
+    <Content Include="Assets\styles\reset.less" />
+    <Content Include="Assets\styles\total.less" />
+    <None Include="packages.config" />
+    <Content Include="Views\Shared\Layout\Detail.cshtml" />
+    <Content Include="Views\Page\Contentful.cshtml" />
+    <Content Include="Views\Shared\Partial\Header.cshtml" />
+    <Content Include="Views\Shared\Partial\Footer.cshtml" />
+    <Content Include="Views\Shared\Partial\Menu.cshtml" />
+    <Content Include="Views\Shared\Layout\Main.cshtml" />
+    <Content Include="Views\Shared\Layout\DetailWithSidebar.cshtml" />
+    <Content Include="Views\Shared\Partial\ProductRequestBox.cshtml" />
+    <Content Include="Views\Shared\Partial\Breadcrumb.cshtml" />
+    <Content Include="Views\Page\Home.cshtml" />
+    <Content Include="Views\Page\NotFound.cshtml" />
+    <Content Include="Views\Form\ContactUs.cshtml" />
+    <Content Include="Views\Form\Home\HomeContactUs.cshtml" />
+    <Content Include="Views\Product\List.cshtml" />
+    <Content Include="Views\Form\Register.cshtml" />
+    <Content Include="Views\Shared\Partial\Head.cshtml" />
+    <Content Include="Views\Shared\Partial\FooterLinks.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Shared\Partial\ProductSlide.cshtml" />
+    <Content Include="Views\Shared\Layout\Contact.cshtml" />
+    <Content Include="Views\Form\Partial\ProductRequestForm.cshtml" />
+    <Content Include="Views\PressRoom\NewsMikro.cshtml" />
+    <Content Include="Views\PressRoom\News.cshtml" />
+    <Content Include="Views\PressRoom\LogoAndImages.cshtml" />
+    <Content Include="Views\Support\Video.cshtml" />
+    <Content Include="Views\Campaigns\Campaigns.cshtml" />
+    <Content Include="Views\Shared\Layout\DetailWithSideMenu.cshtml" />
+    <Content Include="Views\Support\FAQ.cshtml" />
+    <Content Include="Views\Shared\Partial\SocialLinks.cshtml" />
+    <Content Include="Views\Page\Search.cshtml" />
+    <Content Include="Views\Form\ProductRequestForm.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Logs\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51475</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://e-mikro.local</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

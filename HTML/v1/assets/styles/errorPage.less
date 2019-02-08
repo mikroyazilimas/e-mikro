@@ -1,0 +1,51 @@
+.errorPage {
+ .icon {
+  width: 300px;
+  display: block;
+  margin: 0px auto;
+ }
+ .text {
+  text-align: center;
+  margin: 20px 0px 15px 0px;
+  color: @darkBlue;
+  font-size: 14px;
+  strong {
+   font-size: 16px;
+  }
+ }
+ .align {
+  display: flex;
+  justify-content: center;
+  .form-element {
+   margin-right: 20px;
+   input{
+    width: 100%;
+    box-sizing: border-box;
+    background: @darkBlue url(../images/icon/search.svg) no-repeat ;
+    background-size: 20px auto;
+    background-position: 10px 12px;
+    border-radius: 5px;
+    padding: 13px 10px 14px 40px;
+    color: @white;
+    font-size: 16px;
+    &::-webkit-input-placeholder { color: @white;}
+    &::-moz-placeholder { color:@white;}
+    &:-ms-input-placeholder { color: @white;}
+    &:-moz-placeholder { color: @white;}
+   }
+  }
+ }
+ @media screen and (min-width: 0px) and (max-width: 680px) {
+  .align {
+   .form-element {
+    width: 50%;
+   }
+   .btn {
+    width: 50%;
+    padding: 15px 0px;
+    text-align: center;
+   }
+  }
+ }
+ 
+}

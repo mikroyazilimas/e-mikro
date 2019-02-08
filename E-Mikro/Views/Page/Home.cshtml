@@ -1,0 +1,167 @@
+﻿@model E_Mikro.Models.ViewModel.HomeViewModel
+@using E_Mikro.Models.Contentful;
+@{
+    Layout = Paths.Views.Layout.Main;
+    ViewBag.Title = Model.Page.Title;
+    ViewBag.MetaKeywords = Model.Page.MetaKeywords;
+    ViewBag.MetaDescription = Model.Page.MetaDescription;
+    int spotSliderIndex = 0;
+}
+
+<section class="homeBanner">
+    <div class="homeSlider owl-carousel owl-theme">
+        @foreach (var item in Model.Slider.Where(p => p.Type == "Showcase"))
+        {
+            <div class="item">
+                @if (!String.IsNullOrEmpty(item.Link))
+                {
+                    <a href="@item.Link" target="@item.LinkTarget">
+                        <picture>
+                            @if (item.MobileImage != null)
+                            {
+                                <source media="(max-width: 680px)" srcset="@(item.MobileImage.Fields.File.Url)">
+                            }
+                            <img src="@(Html.Raw(item.Image.Fields.File.Url))" />
+                        </picture>
+                    </a>
+                }
+                else
+                {
+                    <picture>
+                        @if (item.MobileImage != null)
+                        {
+                            <source media="(max-width: 680px)" srcset="@(item.MobileImage.Fields.File.Url)">
+                        }
+                        <img src="@(Html.Raw(item.Image.Fields.File.Url))" />
+                    </picture>
+                }
+            </div>
+        }
+    </div>
+</section>
+<section class="homeProduct">
+    <h2>TÜM ÜRÜNLER</h2>
+    <div class="homeProductSlider owl-carousel owl-theme">
+        @foreach (var item in Model.Products)
+        {
+            <div class="item">
+                <a class="icon" lightbox="@(item.Url)"><img src="@(item.Logo.Fields.File.Url)"></a>
+                @if (!String.IsNullOrEmpty(item.Summary))
+                {
+                    <div class="text">
+                        @(Html.Raw(item.Summary))
+                    </div>
+                }
+                <a href="@(item.Url)" class="btn purple">DETAY <img src="assets/images/icon/btn-arrow-white.svg"></a>
+            </div>
+        }
+    </div>
+    <div class="productLightBox">
+        <div class="border">
+            @foreach (var item in Model.Products)
+            {
+                <div class="content @(item.Url)">
+                    <img class="close" src="assets/images/icon/close.svg">
+                    <img class="icon" src="@(item.Logo.Fields.File.Url)" alt="">
+                    @if (!String.IsNullOrEmpty(item.Summary))
+                    {
+                        <div class="text">
+                            @(Html.Raw(item.Summary))
+                        </div>
+                    }
+                    <a href="@(item.Url)" class="btn purple">DETAY</a>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<section class="homePlatfrom">
+    <div class="content">
+        <h2>HER PLATFORMDAN ERİŞİN</h2>
+        <div class="text">
+            <p>
+                Her işletim sisteminde desteklenen e-Mikro servislerine ister <b>PC</b>, ister <b>Tablet</b>, ister <b>Telefonunuzdan</b> erişin
+                ve firmanızı kolayca entegre edin.
+            </p>
+            <p>Üstelik hiçbir ek ücret ödemeden!</p>
+        </div>
+        <a href="https://customer.mikro.com.tr/user/register" target="_blank" class="btn white leftArrow"><b>Kayıt Olun</b> <img src="assets/images/icon/btn-arrow-black.svg"></a>
+    </div>
+</section>
+<section class="homeAbout">
+    <h2>NEDEN E-MİKRO?</h2>
+    <div class="content">
+        <div class="mobile">
+            <div class="homeAboutSlider owl-carousel owl-theme ">
+                @foreach (var item in Model.TripleCTA)
+                {
+                    <div class="item">
+                        <a @(!String.IsNullOrEmpty(item.Url) ? Html.Raw(string.Format("href=\"{0}\"", item.Url)) : Html.Raw(""))>
+                            <img src="@item.Logo.Fields.File.Url" />
+                            <div class="text">@Html.Raw(item.Name)</div>
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="desktop">
+            @foreach (var item in Model.TripleCTA)
+            {
+                <a @(!String.IsNullOrEmpty(item.Url) ? Html.Raw(string.Format("href=\"{0}\"", item.Url)) : Html.Raw(""))>
+                    <img src="@item.Logo.Fields.File.Url">
+                    <div class="text">@Html.Raw(item.Name)</div>
+                </a>
+            }
+        </div>
+    </div>
+</section>
+@if (Model.Slider.Count(p => p.Type == "Spot") > 0)
+{
+    <section class="homeChange">
+        <div class="textArea">
+            <h2>UÇTAN UCA e-DÖNÜŞÜM</h2>
+            <div class="imgArea">
+                @foreach (var item in Model.Slider.Where(p => p.Type == "Spot"))
+                {
+                    <img class="img0@(spotSliderIndex + 1)@(spotSliderIndex == 0 ? " active" : "")" src="/assets/images/bg/homeAbout-0@(spotSliderIndex + 1).svg">
+                    spotSliderIndex++;
+                }
+                <img class="img04 " src="/assets/images/bg/homeAbout-01.svg">
+            </div>
+            @{ spotSliderIndex = 0; }
+            <div class="text">
+                @foreach (var item in Model.Slider.Where(p => p.Type == "Spot"))
+                {
+                    <p class="@(spotSliderIndex == 0 ? "active" : "")">
+                        @Html.Raw(item.SpotText)
+                    </p>
+                    spotSliderIndex++;
+                }
+            </div>
+        </div>
+    </section>
+}
+@*<section class="homeOther">
+        <div class="content">
+            <img class="left" src="assets/images/bg/computer.svg" alt="">
+            <div class="right">
+                <h2>DAHA FAZLA BİLGİ ALIN</h2>
+                <div class="text">
+                    @{
+                        var otherSites = (ViewBag.Menu as List<Menu>).FirstOrDefault(p => p.WebLinks != null && p.WebLinks.Count > 0);
+                        if (otherSites != null)
+                        {
+                            foreach (var item in otherSites.WebLinks)
+                            {
+                                <a href="@(item)" target="_blank">@Html.Raw(item.Replace("https://", "").Replace("http://", ""))</a>
+                            }
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </section>*@
+<section class="homeContact">
+    @Html.Partial(Paths.Views.HomeContactUs, new E_Mikro.Models.Contentful.ContactForm())
+</section>
+@Html.Partial(Paths.Views.Partial.ProductRequestForm, new E_Mikro.Models.Contentful.ProductRequestForm())

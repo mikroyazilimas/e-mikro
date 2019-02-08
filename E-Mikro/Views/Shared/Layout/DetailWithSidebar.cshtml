@@ -1,0 +1,26 @@
+﻿@using E_Mikro.Models
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    @Html.Partial(Paths.Views.Partial.Head)
+</head>
+<body>
+    @Html.Partial(Paths.Views.Partial.Header)
+    @if (ViewBag.IncludeBreadcrumb)
+    {
+        @Html.Partial(Paths.Views.Partial.Breadcrumb);
+    }
+    <section class="aboutPage@(ViewBag.IsSplitSpotText == true ? " support" : "")">
+        <div class="left">
+            @RenderBody()
+        </div>
+        <div class="right">
+            @Html.Partial(Paths.Views.Partial.ProductRequestBox)
+        </div>
+    </section>
+    @Html.Partial(Paths.Views.Partial.ProductRequestForm, new E_Mikro.Models.Contentful.ProductRequestForm() { IsOnlyMobile = true })
+    @Html.Partial(Paths.Views.Partial.Footer)
+</body>
+</html>

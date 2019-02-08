@@ -1,0 +1,17 @@
+﻿@model List<E_Mikro.Models.Contentful.Product>
+
+@if (Model.Count > 0)
+{
+    <section class="productSlideBox whiteContent">
+        <div class="owl-carousel owl-theme">
+            @foreach (var item in Model.Where(p => !Request.RawUrl.Contains(p.Url)))
+            {
+                <div class="item">
+                    <a href="@item.Url" class="icon "><img src="@item.Logo.Fields.File.Url"></a>
+                </div>
+            }
+        </div>
+    </section>
+}
+
+

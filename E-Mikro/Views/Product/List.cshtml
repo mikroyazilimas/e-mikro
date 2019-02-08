@@ -1,0 +1,40 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@using E_Mikro.Models.Contentful;
+@{
+    Layout = Paths.Views.Layout.Main;
+    var products = Model.Data as List<Product>;
+}
+
+
+<section class="whiteContent  productDetail services">
+    <div class=" owl-carousel owl-theme">
+        @foreach (var item in products)
+        {
+            <div class="item">
+                <a class="icon" btn="@item.Url"><img src="@(item.Logo.Fields.File.Url)"></a>
+            </div>
+        }
+    </div>
+
+    @for (int i = 0; i < products.Count; i++)
+    {
+        var item = products[i];
+        //style = "@Html.Raw(i <10 ? "display: block" : "")"
+        <div content="@item.Url" class="px10 serviceItems" style="display:block;" >
+            @if (item.DetailPageLogo != null)
+            {
+                <img class="icon" src="@item.DetailPageLogo.Fields.File.Url">
+            }
+            <div class="textArea">
+                @Html.Raw(item.Features)
+                <a class="btn gPurple formOpen">
+                    Ürün <strong>Talep Formu</strong> <img src="assets/images/icon/btn-arrow-white.svg" alt="">
+                </a>
+                <a href="@item.Url" class="btn grey ">Ürün Detay <img src="assets/images/icon/btn-arrow-white.svg" alt=""></a>
+            </div>
+            <div class="clear"></div>
+        </div>
+    }
+</section>
+
+@Html.Partial(Paths.Views.Partial.ProductRequestForm, new E_Mikro.Models.Contentful.ProductRequestForm())

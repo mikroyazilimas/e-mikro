@@ -1,0 +1,72 @@
+﻿@model E_Mikro.Models.Contentful.ContactForm
+<div class="content">
+    <h2>İletişim</h2>
+    <div class="left">
+        @using (Html.BeginForm("HomePageContact", "Form", FormMethod.Post, new { @class = "contactForm" }))
+        {
+            <div class="left">
+                <div class="form-element">
+                    @Html.TextBoxFor(m => m.FirstName, new { @placeholder = "Ad Soyad" })
+                </div>
+                <div class="form-element">
+                    @Html.TextBoxFor(m => m.Phone, new { @placeholder = "Telefon", @class = "phoneMask" })
+                </div>
+                <div class="form-element">
+                    <select name="Subject">
+                        <option value="">Seçiniz</option>
+                        <option value="Bilgi talep ediyorum">Bilgi talep ediyorum</option>
+                        <option value="Öneri / Şikayetim var">Öneri / Şikayetim var</option>
+                        <option value="Ürünlerle ilgili önerim var">Ürünlerle ilgili önerim var</option>
+                        <option value="İş ortağınız olmak istiyorum">İş ortağınız olmak istiyorum</option>
+                        <option value="Teşekkür etmek istiyorum">Teşekkür etmek istiyorum</option>
+                    </select>
+                </div>
+                <div class="form-element">
+                    @Html.TextBoxFor(m => m.Email, new { @placeholder = "E-posta" })
+                </div>
+            </div>
+            <div class="right">
+                <div class="form-element">
+                    @Html.TextBoxFor(m => m.CompanyName, new { @placeholder = "Şirketinizin İsmi" })
+                </div>
+                <div class="form-element">
+                    @Html.TextAreaFor(m => m.Message, new { @placeholder = "Mesajınız" })
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="checkArea">
+                <div class="customCheck"></div>
+                <label for="check01">
+                    <a href="/6698-sayili-kisisel-verilerin-korunmasi-kanunu" target="_blank">Sayılı Kişisel Verilerin Korunması Kanunu</a> hakkında bilgilendirmeyi
+                    okudum, kabul ediyorum
+                </label>
+                <input type="checkbox" id="check01" name="check01">
+            </div>
+            <div class="checkArea">
+                <div class="customCheck">
+                    @Html.CheckBoxFor(m => m.DataSharing)
+                </div>
+                <label for="DataSharing">
+                    Tarafıma Mikro Yazılım ve grup şirketleri tarafından reklam, pazarlama, tanıtım ve bilgilendirme
+                    amaçlı SMS, e-posta ve telefon yoluyla elektronik ileti gönderilmesine onay verdiğimi beyan ediyorum.
+                </label>
+            </div>
+            <br />
+            <button>Gönder</button>
+        }
+    </div>
+    <div class="right">
+        <div class="item">
+            MASLAK MAH. AOS 55. SOK. 42 MASLAK NO: 2 OFİS 3 BLOK D:11-12-13
+            SARIYER / İSTANBUL PK 34485
+        </div>
+        <div class="item">
+            @*<a href="tel:+90212806">+90 (212) 806 ** ** (PBX) </a>*@
+            <a href="tel:+908502251010">+90 (850) 225 10 10 (Çağrı Merkezi)</a>
+        </div>
+        <div class="item">
+            <a href="mail:info@mikro.com.tr">info@mikro.com.tr</a>
+            <a href="mail:satis@mikro.com.tr">satis@mikro.com.tr</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@{
+    var menu = ViewBag.Menu as List<E_Mikro.Models.Contentful.Menu>;
+    var sideMenu = menu.Where(p => p.Pages != null && p.Pages.FindIndex(x => x.Url == Model.Url) > -1).SelectMany(p => p.Pages);
+}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    @Html.Partial(Paths.Views.Partial.Head)
+    <style type="text/css">
+    </style>
+</head>
+<body>
+    @Html.Partial(Paths.Views.Partial.Header)
+    @if (ViewBag.IncludeBreadcrumb)
+    {
+        @Html.Partial(Paths.Views.Partial.Breadcrumb);
+    }
+    <section class="aboutPage support">
+        <div class="right videoRight">
+            <div class="newRightMenu">
+                @foreach (var item in sideMenu)
+                {
+                    <a class="@(item.Url == Model.Url ? "active" : "")" href="@item.Url">@Html.Raw(item.Title.ToUpper(new System.Globalization.CultureInfo("tr-TR")))</a>
+                }
+            </div>
+            <div class="telepFormu">
+                @Html.Partial(Paths.Views.Partial.ProductRequestBox)
+            </div>
+        </div>
+
+        <div class="left videoContent">
+            <div class=" videoList">
+                @RenderBody()
+            </div>
+        </div>
+    </section>
+    @Html.Partial(Paths.Views.Partial.ProductRequestForm, new E_Mikro.Models.Contentful.ProductRequestForm() { IsOnlyMobile = true })
+    @Html.Partial(Paths.Views.Partial.Footer)
+</body>
+</html>

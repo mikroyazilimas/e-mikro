@@ -1,0 +1,27 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@{
+    Layout = Model.Layout;
+}
+
+@if (!String.IsNullOrEmpty(Model.SpotText))
+{
+    if (!String.IsNullOrEmpty(Model.SpotTextRight))
+    {
+        <a class="phone">
+            @Html.Raw(Model.SpotTextRight)
+        </a>
+        <div class="title">
+            @Html.Raw(Model.SpotText)
+        </div>
+    }
+    else
+    {
+        <div class="title about">
+            @Html.Raw(Model.SpotText)
+        </div>
+    }
+}
+<div class="clear"></div>
+<div class="textArea">
+    @Html.Raw(Model.Content)
+</div>

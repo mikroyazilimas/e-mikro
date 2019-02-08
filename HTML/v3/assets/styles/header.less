@@ -1,0 +1,166 @@
+header {
+  background: @red;
+  position: relative;
+  z-index: 50;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  &.active {
+    position: fixed;
+  }
+  .logo {
+    display: block;
+    padding: 17px;
+    box-sizing: border-box;
+    width: 235px;
+    float: left;
+  }
+  .right {
+    float: left;
+    width: calc(100% - 235px);
+    .searchArea {
+      background: @white;
+      &:after { .clear; }
+      .search {
+        width: 107px;
+        float: right;
+        background: @darkRed;
+        padding: 4px;
+        box-sizing: border-box;
+        .pointer;
+        img {
+          width: 17px;
+          float: left;
+        }
+        input {
+          width: calc(100% - 20px);
+          float: right;
+          background: none;
+          color: @lightGrey;
+          &::-webkit-input-placeholder { color: @lightGrey; }
+          &::-moz-placeholder { color: @lightGrey;; }
+          &:-ms-input-placeholder { color: @lightGrey;;}
+          &:-moz-placeholder { color: @lightGrey;; }
+        }
+        &:after { .clear; }
+      }
+    }
+    .loginBtn, .registerBtn {
+      color: @white;
+      float: right;
+      padding: 25px;
+      box-sizing: border-box;
+      .pointer;
+      img {
+        width: 18px;
+        margin-right: 4px;
+      }
+    }
+    .loginBtn {
+      background: @darkRed;
+    }
+    .menuBtn {
+      .pointer;
+      float: right;
+      padding: 27px 21px 0px 21px;
+      color: @white;
+      & > span {
+        float: left;
+        margin-right: 5px;
+      }
+      &:after { .clear; }
+      #nav-icon {
+        float: left;
+        margin-left: 5px;
+        width: 20px;
+        height: 25px;
+        position: relative;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.5s ease-in-out;
+        -moz-transition: 0.5s ease-in-out;
+        -o-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        span {
+          display: block;
+          position: absolute;
+          height: 3px;
+          width: 100%;
+          background: #fff;
+          border-radius: 9px;
+          opacity: 1;
+          left: 0;
+          -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+          -webkit-transition: 0.25s ease-in-out;
+          -moz-transition: 0.25s ease-in-out;
+          -o-transition: 0.25s ease-in-out;
+          transition: 0.25s ease-in-out;
+          &:nth-child(1) {
+            top: 0px;
+          }
+          &:nth-child(2),
+          &:nth-child(3) {
+            top: 7px;
+          }
+          &:nth-child(4) {
+            top: 14px;
+          }
+        }
+        &.open {
+          span {
+            &:nth-child(1) {
+              top: 18px;
+              width: 0%;
+              left: 50%;
+            }
+            &:nth-child(2) {
+              -webkit-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+            &:nth-child(3) {
+              -webkit-transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+            }
+            &:nth-child(4) {
+              top: 18px;
+              width: 0%;
+              left: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  &:after { .clear; }
+  @media screen and (min-width: 0px) and (max-width: 660px) {
+    .right {
+      .loginBtn, .registerBtn, .searchArea {
+        display: none;
+      }
+      .menuBtn {
+        border-left: 1px solid @darkLight;
+        padding: 11px 25px;
+        margin-top: 21px;
+      }
+    }
+  }
+}
+.header-space {
+  width: 100%;
+  height: 96px;
+}
+@media screen and (min-width: 0px) and (max-width: 660px) {
+  .header-space {
+    width: 100%;
+    height: 84px;
+  }
+}

@@ -1,0 +1,65 @@
+.checkArea {
+ margin-top: 15px;
+ color: @darkBlue;
+ label {
+  float: left;
+  width: calc( 100% - 30px);
+  a {
+   color: @darkBlue;
+   font-weight: bold;
+   text-decoration: underline;
+  }
+ }
+ 
+ input {
+  position: absolute;
+   width: 0px;
+   opacity: 0;
+   left: -10px;
+   top: -10px;
+  }
+  
+.customCheck {
+ display: inline-block;
+ width: 20px;
+ height: 20px;
+ border:1px solid @white;
+ border-radius: 3px;
+ position: relative;
+ margin-right: 5px;
+ cursor: pointer;
+ float: left;
+
+ &.active {
+  &:after {
+   width: 18px;
+   height: 18px;
+   background: @white;
+   content: "";
+   display: block;
+   position: absolute;
+   left: 1px;
+   top: 1px;
+   border-radius: 3px;
+  }
+ }
+ &.black {
+  border-color: @black;
+  &.active {
+   &:after {
+    background: @black;
+   }
+  }
+ }
+
+}
+&:after {
+ .clear;
+}
+&.white {
+ .customCheck {
+  border-color: #707070;
+  background: @white;
+ }
+}
+}

@@ -1,0 +1,41 @@
+﻿.aboutPage .textArea { width: 100%; padding: 30px; -webkit-box-sizing: border-box; box-sizing: border-box; background: #fff; -webkit-border-bottom-left-radius: 20px; -webkit-border-bottom-right-radius: 20px; -moz-border-radius-bottomleft: 20px; -moz-border-radius-bottomright: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px; }
+.aboutPage .title.about { padding: 35px 80px; }
+.aboutPage .title { background: #38485C; padding: 35px 30px; -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-border-top-left-radius: 20px; -webkit-border-top-right-radius: 20px; -moz-border-radius-topleft: 20px; -moz-border-radius-topright: 20px; border-top-left-radius: 20px; border-top-right-radius: 20px; color: #fff; font-size: 20px; text-align: center; }
+.telepFormu .btn { padding: 15px 35px !important; -webkit-box-sizing: border-box !important; box-sizing: border-box; border-radius: 5px; display: inline-block !important; width: auto; cursor: pointer; font-size: 14px !important; line-height: 14px; }
+.telepFormu .btn:hover { color: #1F1E1E !important; background: #fff !important; font-weight: normal !important; border-right: none !important; }
+.search-page { padding-top: 30px; }
+.search-page .search-input { width: 100%; -webkit-box-sizing: border-box; box-sizing: border-box; background: #34495E url(../images/icon/search.svg) no-repeat; background-size: 20px auto; background-position: 10px 12px; border-radius: 5px; padding: 13px 10px 14px 40px; color: #fff; font-size: 16px; }
+.search-page .search-input::placeholder { color: #fff; }
+.search-page .results { margin-top: 20px; }
+.search-page .results .result { margin: 10px 0px; border-bottom: 1px solid #e8e8e8; padding-bottom: 10px; }
+.search-page .results .result:last-child { border-bottom: none; }
+.search-page .results .result .title { font-weight: bold; font-size: 16px; color: #34495e; }
+.search-page .results .result .description { margin: 5px 0px; color: #34495e; }
+.search-page .results .result .link { color: #757575; font-size: 13px; }
+.search-page .results .result .link a { font-size: 13px; color: #777; }
+.checkArea.white .customCheck.active:after { background: #34495E; }
+header .right .loginBtn, header .right .registerBtn { padding: 25px 15px; margin-top: 3px; }
+header .logo img { height: 50px; }
+.breadcrumb ol { }
+.breadcrumb ol li { position: relative; display: inline-block; margin-right: 10px; margin-left: 10px; }
+.breadcrumb ol li::after { position: absolute; content: ">"; top: 0px; right: -15px; }
+.breadcrumb ol li:last-child::after { display: none; }
+.breadcrumb ol li a { }
+.breadcrumb ol li span { color: #34495E; font-size: 12px; }
+.contentPage .right .form-element input { width: 100%; border-radius: 5px; border: 1px solid #CECECE; background: #E0E0E0; padding: 11px 5px; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.contentPage .right .form-element { width: 100%; margin-bottom: 10px; }
+.contentPage.form .right textarea { height: 266px; }
+
+.contentPage .right .select2-container--default .select2-selection--single .select2-selection__rendered { padding: 5px 5px; color: #404040; line-height: 27px; background-color: #e0e0e0; }
+.contentPage .right .select2-container--default .select2-selection--single { border: 1px solid #CECECE; height: 39px; }
+.form-element.field-error .select2-container--default .select2-selection--single { border: 1px solid #d2232d; height: 39px; }
+.contactForm select, .productRequest select { background-color: transparent; border: 1px solid #fff; width: 100%; height: 35px; border-radius: 4px; color: #fff; padding-left: 7px; }
+.contactForm select option, .productRequest select option { background: rgba(0, 0, 0, 0.3); color: #fff; text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4); }
+.homeContact .content .left .form-element textarea { height: 126px; }
+textarea { font-family: 'Roboto', sans-serif; }
+.homeContact { background-repeat: repeat; }
+.productDetail .icon { margin-bottom: 20px; }
+
+table { width: calc(100% - 15px); margin-right: 20px; border-spacing: 0px; }
+table td { border: 1px solid #fff; padding: 10px; }
+.productDetail .textArea a { margin-bottom: 20px; }

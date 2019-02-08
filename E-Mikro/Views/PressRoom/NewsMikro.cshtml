@@ -1,0 +1,18 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@{
+    Layout = Paths.Views.Layout.DetailWithSideMenu;
+    var data = Model.Data as List<E_Mikro.Models.Contentful.News>;
+}
+
+<div class="campany">
+    @foreach (var item in data)
+    {
+        <a @Html.Raw(item.DetailImage != null ? "href=\"" + item.DetailImage.Fields.File.Url + "\"" : "") class="subjectLink">
+            <i>@Html.Raw(item.Date)</i>
+            <b> @Html.Raw(item.Title)</b>
+            @Html.Raw(item.SummaryText)
+        </a>
+    }
+</div>
+
+

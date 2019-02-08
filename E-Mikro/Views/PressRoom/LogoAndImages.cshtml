@@ -1,0 +1,10 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@{
+    Layout = Paths.Views.Layout.Main;
+    var data = Model.Data as List<E_Mikro.Models.Contentful.LogoAndImage>;
+}
+
+@foreach (var item in data)
+{
+    @Html.Raw(item.Image.Fields.File.Url)
+}

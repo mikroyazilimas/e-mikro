@@ -1,0 +1,93 @@
+﻿@using E_Mikro.Models;
+@{
+    var headerLinks = ViewBag.Header as List<Navigation>;
+}
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5ZH9NPB"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+<div class="loginArea">
+    <div class="content">
+        <img class="close" src="/assets/images/icon/close-white.svg" alt="">
+        <div class="right">
+            <img class="logo" src="/assets/images/login-logo.svg">
+            <a class="loginBtn">Giriş Yap</a>
+            <a href="/kayit-ol" class="registerBtn">Kayıt Ol</a>
+            <div class="clear"></div>
+            <form>
+                <div class="form-element">
+                    <label class="title">E-Posta</label>
+                    <input type="text">
+                </div>
+                <div class="form-element">
+                    <label class="title">Şifre</label>
+                    <input type="password" />
+                </div>
+                <a class="forgotPass">Şifremi Unutum</a>
+                <button class="btn gPurple">Giriş <img src="/assets/images/icon/btn-arrow-white.svg" alt=""></button>
+                <div class="clear"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<header>
+    <a class="logo" href="/"><img src="/assets/images/header-logo.svg" alt="E-Mikro / E-Dönüşüm Uzmanı"></a>
+    <div class="right">
+        <div class="searchArea">
+            <div class="search">
+                <img src="/assets/images/icon/search.svg">
+                <input class="searchBox" type="text" placeholder="Ara" />
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="menuBtn">
+            <span>MENÜ</span>
+            <div id="nav-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        @foreach (var link in headerLinks)
+        {
+            if (link.Icon != null)
+            {
+                <a href="@link.Url" target="@link.LinkTarget">
+                    <div class="loginBtn"><img src="@(link.Icon.Fields.File.Url)" /> @Html.Raw(link.Name.ToUpper(new System.Globalization.CultureInfo("tr-TR")))</div>
+                </a>
+            }
+            else
+            {
+                <a target="@link.LinkTarget" href="@link.Url" class="registerBtn">@Html.Raw(link.Name.ToUpper(new System.Globalization.CultureInfo("tr-TR")))</a>
+            }
+        }
+    </div>
+    <div class="menuArea">
+        <div class="p-relative">
+            <div class="logo"><img src="/assets/images/menu-logo.png"></div>
+            @Html.Partial(Paths.Views.Partial.Menu)
+            <div class="bottom">
+                <div class="registerBtn">KAYIT OL</div>
+                <div class="loginBtn"><img src="/assets/images/icon/user.svg"> GİRİŞ</div>
+                <div class="m-center">
+                    @Html.Partial(Paths.Views.Partial.FooterLinks)
+                    <ul class="social">
+                        <li><a href="https://www.facebook.com/mikroyazilimas" target="_blank"><img src="/assets/images/icon/facebook.svg"></a></li>
+                        <li><a href="https://twitter.com/mikroyazilimas" target="_blank"><img src="/assets/images/icon/twitter.svg"></a></li>
+                        <li><a href="https://www.linkedin.com/company/2955583/?trk=tyah&amp;trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A2955583%2Cidx%3A1-1-1%2CtarId%3A1445523595929%2Ctas%3AMikro%20Y"><img src="/assets/images/icon/linkedin.svg"></a></li>
+                        <li><a href="https://www.youtube.com/channel/UCWSwAVu6dwATfiTAo6KYAvg"><img src="/assets/images/icon/youtube.svg"></a></li>
+                    </ul>
+                    <div class="text">© @Html.Raw(DateTime.Now.Year) - Tüm hakları Mikro Yazılımevi A.Ş.’ ye aittir</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="header-space"></div>

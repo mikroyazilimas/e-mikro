@@ -1,0 +1,21 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@{
+    Layout = Paths.Views.Layout.DetailWithSideMenu;
+    var data = Model.Data as List<E_Mikro.Models.Contentful.FAQ>;
+}
+
+<div class="row">
+    <div class="col-12">
+        <ul class="accordion detail">
+            @foreach (var item in data)
+            {
+                <li>
+                    <div class="aTitle">@(Html.Raw(item.Question))</div>
+                    <div class="aDetail">
+                        @(Html.Raw(item.Answer))
+                    </div>
+                </li>
+            }
+        </ul>
+    </div>
+</div>

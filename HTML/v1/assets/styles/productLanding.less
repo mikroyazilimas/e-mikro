@@ -1,0 +1,52 @@
+.productLanding {
+ width: 100%;
+ .content {
+  display: flex;
+  flex-wrap: wrap;
+  a {
+   position: relative;
+   flex: 1 0 33.33%;
+   margin-bottom: 20px;
+   img {
+    display: block;
+    width: 180px;
+    margin: 0px auto;
+   }
+   &:nth-child(3n-1){
+    &:after {
+     content: "";
+     display: block;
+     width: 1px;
+     height: 20px;
+     background: @darkLight;
+     position: absolute;
+     left: 0%;
+     top: 20px;
+    }
+    &:before {
+     content: "";
+     display: block;
+     width: 1px;
+     height: 20px;
+     background: @darkLight;
+     position: absolute;
+     right: 0%;
+     top: 20px;
+    }
+   }
+  }
+ }
+ @media screen and (min-width: 0px) and (max-width: 860px) {
+  .content {
+   a {
+    flex: 1 0 50%;
+    margin: 20px 0px;
+    &:nth-child(3n-1){
+     &:after, &:before {
+      display: none;
+     }
+    }
+   }
+  }
+ }
+}

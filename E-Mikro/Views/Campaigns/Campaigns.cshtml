@@ -1,0 +1,35 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@{
+    Layout = Paths.Views.Layout.Main;
+    var data = Model.Data as List<E_Mikro.Models.Contentful.Campaign>;
+}
+
+<section class="aboutPage support">
+    <div class="left">
+        <div class="campany">
+            @foreach (var item in data)
+            {
+                <div class="companyItem">
+                    <div class="tumb">
+                        <img src="@item.Image.Fields.File.Url">
+                        <div class="text">
+                            <div class="date">@item.Date</div>
+                            <div>@(Html.Raw(item.Name))</div>
+                        </div>
+                    </div>
+                    <div class="companyTextArea">
+                        <div class="companyTitle">@Html.Raw(item.Name)</div>
+                        <div class="text">
+                            @Html.Raw(item.Content)
+                        </div>
+                        <a href="#" class="btn blue">Kampanya Formu  <img src="assets/images/icon/btn-arrow-white.svg"></a>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="right">
+        @Html.Partial(Paths.Views.Partial.ProductRequestBox)
+    </div>
+</section>
+@Html.Partial(Paths.Views.Partial.ProductRequestForm, new E_Mikro.Models.Contentful.ProductRequestForm() { IsOnlyMobile = true })

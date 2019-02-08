@@ -1,0 +1,47 @@
+﻿@model E_Mikro.Models.ViewModel.ProductViewModel
+@using E_Mikro.Models.Contentful;
+@{
+    ViewBag.Title = Tools.CapitalizeWords(Model.ProductDetail.Name);
+    ViewBag.MetaDescription = Model.ProductDetail.MetaDescription;
+    ViewBag.MetaKeywords = Model.ProductDetail.MetaKeywords;
+    List<Product> products = new List<Product>();
+    if (Model.ProductList != null)
+    {
+        products.AddRange(Model.ProductList);
+    }
+    Layout = Paths.Views.Layout.Main;
+}
+
+<section class="whiteContent p20 productDetail">
+    <div class="mt-20">
+        @if (Model.ProductDetail.DetailPageLogo != null)
+        {
+            <img class="icon" src="@Model.ProductDetail.DetailPageLogo.Fields.File.Url">
+        }
+        <div class="textArea">
+            @Html.Raw(Model.ProductDetail.Features)
+        </div>
+        <div class="clear"></div>
+    </div>
+    @Html.Raw(Model.ProductDetail.TabContents)
+    <div class="mt-40">
+        @if (Model.ProductDetail.Video != null)
+        {
+            <div class="video">
+                <video controls>
+                    <source src="@Model.ProductDetail.Video.Fields.File.Url" type="video/mp4">
+                    Your browser does not support HTML5 video.
+                </video>
+            </div>
+        }
+        @if (!String.IsNullOrEmpty(Model.ProductDetail.Description))
+        {
+            <div class="textArea video">
+                @Html.Raw(Model.ProductDetail.Description)
+            </div>
+        }
+        <div class="clear"></div>
+    </div>
+</section>
+@Html.Partial(Paths.Views.Partial.ProductSlide, products)
+@Html.Partial(Paths.Views.Partial.ProductRequestForm, new E_Mikro.Models.Contentful.ProductRequestForm())

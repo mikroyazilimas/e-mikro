@@ -1,0 +1,88 @@
+﻿@model E_Mikro.Models.Contentful.ProductRequestForm
+@using E_Mikro.Models.Contentful;
+@{
+    var products = ViewBag.Products as List<Product>;
+    Model.PhoneCode = "+90";
+}
+<section class="productRequest@(Model.IsOnlyMobile ? " onlyMoblile" : "")"@(Model.IsPage == true ? Html.Raw("style=\"position:relative !important; box-sizing: border-box;\"") : Html.Raw(""))>
+    <div class="content">
+        @if (Model.IsPage == false)
+        {
+            <a class="btn white center formOpen">Ürün <b>Talep Formu</b> <img src="assets/images/icon/btn-arrow-black.svg"></a>
+        }
+        <div id="formArea" @(Model.IsPage == true ? Html.Raw("style=\"display:block !important;\"") : Html.Raw(""))>
+            @if (Model.IsPage == false)
+            {
+                <img class="close" src="assets/images/icon/close-white.svg" alt="">
+            }
+            <div class="clear"></div>
+            <div class="left">
+                <h2><b>Ürün</b> Talep Formu</h2>
+                <div class="text">
+                    Çözüm ortağımız size uygulamalı Mikro Yazılım programları sunumu yapacak. Böylece ürünlerimizle tanışacak, işletmenizin ihtiyaçlarını en doğru şekilde karşılayacak seri ve modülleri kolayca tespit edeceksiniz.
+                </div>
+                <div>
+                    @Html.CheckBoxFor(m => m.UsingMikroSoftware, new { @class = "lcs_check lcs_tt1", @autocomplete = "off", @checked = "checked" })
+                    Mikro Yazılım kurumsal programlarından birini kullanıyorum.
+                </div>
+            </div>
+            <div class="right">
+                @using (Html.BeginForm("ProductRequest", "Form", FormMethod.Post, new { @class = "productForm" }))
+                {
+                    @Html.HiddenFor(m => m.UsingMikroSoftware, new { @id = "hdnUsingMikroSoftware" })
+                    <div class="left">
+                        <div class="form-element">
+                            @Html.TextBoxFor(m => m.FirstName, new { placeholder = "Adınız" })
+                        </div>
+                        <div class="form-element">
+                            @Html.TextBoxFor(m => m.LastName, new { placeholder = "Soyadınız" })
+                        </div>
+                        <div class="form-group">
+                            <div class="form-element">
+                                @Html.TextBoxFor(m => m.PhoneCode, new { dataStore = Model.PhoneCode, @class = "phoneCode", @maxlength = "4" })
+                            </div>
+                            <div class="form-element">
+                                @Html.TextBoxFor(m => m.Phone, new { placeholder = "Telefon", @class = "phoneMask" })
+                            </div>
+                        </div>
+                        <div class="form-element">
+                            @Html.TextBoxFor(m => m.Email, new { placeholder = "E-Posta" })
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="form-element">
+                            <select name="Product">
+                                <option value="">Ürün Seçiniz</option>
+                                @foreach (var item in products)
+                                {
+                                    <option value="@item.SalesForceName">@item.Name</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="form-element">
+                            @Html.TextAreaFor(m => m.Message, new { placeholder = "Varsa mesajınızı yazın" })
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                    <div class="checkArea">
+                        <div class="customCheck"></div>
+                        <label>
+                            <a href="/6698-sayili-kisisel-verilerin-korunmasi-kanunu" target="_blank">Sayılı Kişisel Verilerin Korunması Kanunu</a> hakkında bilgilendirmeyi
+                            okudum, kabul ediyorum
+                        </label>
+                        <input type="checkbox" id="check01" name="check01" />
+                    </div>
+                    <div class="checkArea">
+                        <div class="customCheck "></div>
+                        <label>
+                            Tarafıma Mikro Yazılım ve grup şirketleri tarafından reklam, pazarlama, tanıtım ve bilgilendirme
+                            amaçlı SMS, e-posta ve telefon yoluyla elektronik ileti gönderilmesine onay verdiğimi beyan ediyorum.
+                        </label>
+                        @Html.CheckBoxFor(m => m.DataSharing)
+                    </div>
+                    <button class="btn white">Gönder <img src="assets/images/icon/btn-arrow-black.svg"></button>
+                }
+            </div>
+        </div>
+    </div>
+</section>

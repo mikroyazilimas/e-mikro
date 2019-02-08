@@ -1,0 +1,112 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@{
+    Layout = Paths.Views.Layout.Main;
+}
+
+<div class="registerArea">
+    <div class="left">
+        <a class="loginBtn">Giriş Yap</a>
+        <a class="registerBtn">Kayıt Ol</a>
+        <div class="clear"></div>
+        <form class="registerForm">
+            <div class="form-element">
+                <label for="tckn" class="title">T.C. Kimlik No*</label>
+                <input name="tckn" id="tckn" type="number" maxlength="11">
+            </div>
+            <div class="form-element">
+                <label for="name" class="title">Adınız*</label>
+                <input name="name" id="name" type="text">
+            </div>
+            <div class="form-element">
+                <label for="surname" class="title">Soyadınız*</label>
+                <input name="surname" id="surname" type="text">
+            </div>
+            <div class="form-element">
+                <label for="email" class="title">e-Posta Adresiniz*</label>
+                <input name="email" id="email" type="text">
+            </div>
+            <div class="form-group">
+                <div class="form-element">
+                    <label for="pass" class="title">Parola*</label>
+                    <input name="pass" id="pass" type="password">
+                </div>
+
+                <div class="form-element">
+                    <label for="passAgain" class="title">Parola Doğrula*</label>
+                    <input type="password" name="passAgain" id="passAgain">
+                </div>
+            </div>
+            <ul class="accordion  mobile">
+                <li>
+                    <div class="aTitle">
+                        Kişisel Veriler Bilgilendirme Metni
+                    </div>
+                    <div class="aDetail">
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                        industry's
+                        standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
+                        to
+                        make a type specimen book. It has survived not only five centuries, but also the leap into electronic
+                        typesetting,
+                        remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                        containing
+                        Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including
+                        versions of Lorem Ipsum.
+                    </div>
+                </li>
+            </ul>
+            <div class="checkArea ">
+                <div class="customCheck black"></div>
+                <label>
+                    <a href="#" target="_blank">Sayılı Kişisel Verilerin Korunması Kanunu</a> hakkında
+                    bilgilendirmeyiokudum, kabul ediyorum
+                </label>
+                <input type="checkbox" id="check01" name="check01">
+            </div>
+            <div class="checkArea ">
+                <div class="customCheck black"></div>
+                <label>
+                    Tarafıma Mikro Yazılım ve grup şirketleri tarafından reklam, pazarlama, tanıtım ve bilgilendirme
+                    amaçlı SMS, e-posta ve telefon yoluyla elektronik ileti gönderilmesine onay verdiğimi beyan ediyorum.
+                </label>
+                <input type="checkbox" id="check02" name="check02">
+            </div>
+            <div class="recaptcha">
+                <div class="g-recaptcha" data-sitekey="6LdeYH4UAAAAAKcNcwtPDARKiGdJwRK59iVfV00d"></div>
+                <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
+
+            </div>
+            <button class="btn gPurple">Kayıt Ol <img src="assets/images/icon/btn-arrow-white.svg"></button>
+            <div class="clear"></div>
+            <br>
+            <div>* Doldurulması zorunlu alan</div>
+        </form>
+    </div>
+    <div class="right">
+        <div class="topText">
+            <h4>Neden Kayıt Olmalıyım?</h4>
+            <p>
+                e-mikro hizmetlerinden faydalanabilmek için ön kayıt ile size bir profil sayfası oluşturulur. Oluşturulan
+                Profil sayfanızdan;
+            </p>
+            <p><img src="assets/images/icon/dot.svg"> İstediğiniz e-mikro hizmetlerine üye olabilirsiniz.</p>
+            <p><img src="assets/images/icon/dot.svg"> My E-Kontör tüketim bilgisini görebilir.</p>
+            <p>
+                <img src="assets/images/icon/dot.svg"> Birden fazla firmaya üyeyseniz ayrı ayrı firma bilgilerinize
+                ulaşabiir,
+            </p>
+            <p><img src="assets/images/icon/dot.svg"> Varsa CRM hesabınıza ulaşabilirsiniz.</p>
+        </div>
+        <div class="bottomText">
+            <h4>Önemli!</h4>
+            <p>
+                Şirket adına e-Mikro hizmetlerinde yapılan işlemlerin kişi bazında kayıt altına alınabilmesi için lütfen
+                kullanıcıları kişiye özel açınız ve kişisel e-posta adresinizi kullanınız.
+            </p>
+            <p>
+                <a href="mailto:muhasebe@firma.com">muhasebe@firma.com</a> benzeri e-posta adresleri ile e-mikro kullanıcısı
+                oluşturmayınız.
+            </p>
+        </div>
+    </div>
+</div>

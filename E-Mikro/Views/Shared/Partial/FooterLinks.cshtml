@@ -1,0 +1,13 @@
+﻿@using E_Mikro.Models;
+@{
+    var footerLinks = ViewBag.Footer as List<Navigation>;
+}
+@if (footerLinks != null && footerLinks.Count > 0)
+{
+    <ul class="link">
+        @foreach (var link in footerLinks)
+        {
+            <li><a target="@link.LinkTarget" href="@link.Url">@(Html.Raw(link.Name))</a></li>
+        }
+    </ul>
+}

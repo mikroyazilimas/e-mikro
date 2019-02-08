@@ -1,0 +1,7 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@{
+    Layout = Paths.Views.Layout.Main;
+}
+<section class="whiteContent p20 productDetail">
+    @Html.Partial(Paths.Views.Partial.ProductRequestForm, new E_Mikro.Models.Contentful.ProductRequestForm() { IsPage = true })
+</section>

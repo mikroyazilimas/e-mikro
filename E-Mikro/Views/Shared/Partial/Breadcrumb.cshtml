@@ -1,0 +1,33 @@
+﻿@using E_Mikro.Models;
+@{
+    var breadcrumb = ViewBag.Breadcrumb as Breadcrumb;
+}
+<div class="headTitle">
+    @if (!String.IsNullOrEmpty(breadcrumb.CurrentPageName))
+    {
+        <h1>@breadcrumb.CurrentPageName.ToUpper(new System.Globalization.CultureInfo("tr-TR"))</h1>
+        <div class="breadCrumb">
+            <nav role="navigation" class="breadcrumb" itemscope itemtype="http://schema.org/Breadcrumb">
+                <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+                    @for (int i = 0; i < breadcrumb.Nodes.Count; i++)
+                    {
+                        var node = breadcrumb.Nodes[i];
+                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                            <a itemprop="item" href="@node.Url"><span itemprop="name">@Tools.CapitalizeWords(node.Name)</span></a>
+                            <meta itemprop="position" content="@(i+1)" />
+                        </li>
+                    }
+                    <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                        <span>@Tools.CapitalizeWords(breadcrumb.CurrentPageName)</span>
+                        <meta itemprop="position" content="@(breadcrumb.Nodes.Count+1)" />
+                    </li>
+                </ol>
+            </nav>
+            @*@foreach (var node in breadcrumb.Nodes)
+            {
+                <a href="@node.Url">@Tools.CapitalizeWords(node.Name) </a> @Html.Raw("&gt;")
+            }
+            <a>@Tools.CapitalizeWords(breadcrumb.CurrentPageName)</a>*@
+        </div>
+    }
+</div>

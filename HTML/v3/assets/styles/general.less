@@ -1,0 +1,36 @@
+.clear {
+ content: "";
+ display: block;
+ clear: both;
+}
+.pointer { cursor: pointer; }
+.t-3s { transition: .3s }
+.p-relative { position: relative;}
+.m-center { margin-left: auto; margin-right: auto; }
+
+.whiteContent {
+ background: @white;
+}
+
+.greyContent {
+ background: #F5F5F5;
+}
+.whiteContent, .greyContent {
+ max-width: 1170px;
+ width: 100%;
+ border-radius: 20px;
+ margin: 25px auto;
+ padding: 70px 30px 30px 30px;
+ box-sizing: border-box;
+ &.p20 {
+  padding: 20px;
+ }
+ @media screen and (min-width: 0px) and (max-width: 1170px) {
+  border-radius: 0px;
+  margin-bottom: 0px;
+ }
+ @media screen and (min-width: 0px) and (max-width: 680px) {
+  padding: 70px 10px 30px 10px;
+ }
+}
+

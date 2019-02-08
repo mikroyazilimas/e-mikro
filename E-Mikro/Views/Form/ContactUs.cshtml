@@ -1,0 +1,92 @@
+﻿@model E_Mikro.Models.Contentful.Page
+@{
+    Layout = Paths.Views.Layout.Main;
+}
+
+<section class="greyContent p20 contentPage form">
+    @using (Html.BeginForm("Contact", "Form", FormMethod.Post, new { @class = "formContact" }))
+    {
+        <div class="left">
+            <div class="form-element">
+                <label class="title">Adınız*</label>
+                @Html.TextBoxFor(m => m.ContactForm.FirstName)
+            </div>
+            <div class="form-element">
+                <label class="title">Soyadınız*</label>
+                @Html.TextBoxFor(m => m.ContactForm.LastName)
+            </div>
+            <div class="form-element">
+                <label class="title">Fırmanızın Ünvanı*</label>
+                @Html.TextBoxFor(m => m.ContactForm.CompanyTitle)
+            </div>
+            <div class="form-element">
+                <label class="title">E-Posta*</label>
+                @Html.TextBoxFor(m => m.ContactForm.Email)
+            </div>
+            <div class="form-element">
+                <label class="title">Telefon*</label>
+                @Html.TextBoxFor(m => m.ContactForm.Phone, new { @class = "phoneMask" })
+            </div>
+            <div class="form-group">
+                @*<div class="form-element">
+                    <select name="ContactForm.PhoneCode" class="customSelect">
+                        <option>+10</option>
+                        <option>+20</option>
+                        <option>+30</option>
+                        <option>+40</option>
+                        <option>+50</option>
+                        <option>+60</option>
+                        <option>+70</option>
+                        <option>+80</option>
+                        <option>+80</option>
+                        <option selected="selected">+90</option>
+                        <option>+100</option>
+                    </select>
+                </div>*@
+            </div>
+        </div>
+        <div class="right">
+            <div class="form-element">
+                <label class="title">Konu*</label>
+                <select name="ContactForm.Subject" class="customSelect">
+                    <option value="">Seçiniz</option>
+                    <option value="Bilgi talep ediyorum">Bilgi talep ediyorum</option>
+                    <option value="Öneri / Şikayetim var">Öneri / Şikayetim var</option>
+                    <option value="Ürünlerle ilgili önerim var">Ürünlerle ilgili önerim var</option>
+                    <option value="İş ortağınız olmak istiyorum">İş ortağınız olmak istiyorum</option>
+                    <option value="Teşekkür etmek istiyorum">Teşekkür etmek istiyorum</option>
+                </select>
+            </div>
+            <div class="form-element">
+                <label class="title">Mesajınız*</label>
+                @Html.TextAreaFor(m => m.ContactForm.Message)
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="checkArea white">
+            <div class="customCheck"></div>
+            <label for="check01">
+                <a href="/6698-sayili-kisisel-verilerin-korunmasi-kanunu" target="_blank">Sayılı Kişisel Verilerin Korunması Kanunu</a> hakkında
+                bilgilendirmeyi
+                okudum, kabul ediyorum
+            </label>
+            <input type="checkbox" name="check01">
+        </div>
+        <div class="checkArea white">
+            <div class="customCheck ">
+                @Html.CheckBoxFor(m => m.ContactForm.DataSharing)
+            </div>
+            <label for="ContactForm.DataSharing">
+                Tarafıma Mikro Yazılım ve grup şirketleri tarafından reklam, pazarlama, tanıtım ve bilgilendirme
+                amaçlı SMS, e-posta ve telefon yoluyla elektronik ileti gönderilmesine onay verdiğimi beyan ediyorum.
+            </label>
+        </div>
+        @*<div class="recaptcha">
+            <div class="g-recaptcha" data-sitekey="6LdeYH4UAAAAAKcNcwtPDARKiGdJwRK59iVfV00d"></div>
+            <input type="hidden" class="hiddenRecaptcha required" name="hiddenRecaptcha" id="hiddenRecaptcha">
+        </div>*@
+        <button class="btn gPurple">Gönder <img src="assets/images/icon/btn-arrow-white.svg"></button>
+        <div class="clear"></div>
+        <p>* Doldurulması zorunlu alan</p>
+    }
+</section>
