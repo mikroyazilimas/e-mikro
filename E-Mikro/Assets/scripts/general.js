@@ -93,6 +93,29 @@ $(document).ready(function () {
 
     // + home about animation
     if ($(".homeChange").length > 0) {
+      
+
+
+        var count = 1;
+
+        function transition() {
+
+            if (count == 1) {
+                $(".homeChange").click();
+                count = 2;
+
+            } else if (count == 2) {
+                $(".homeChange").click();
+                count = 3;
+
+            } else if (count == 3) {
+                $(".homeChange").click();
+                count = 1;
+            }
+
+        }
+        setInterval(transition, 3000);
+
         $(".homeChange").click(function () {
             $(".homeChange .img01, .homeChange .img02, .homeChange .img03, .homeChange .img04").fadeOut("slow");
 
@@ -548,6 +571,12 @@ $(document).ready(function () {
 
     // - footerFix02
 
+    //  + homce content click
+    $(".homeContact .click").click(function () {
+        $(this).hide();
+        $(".homeContact .number").show();
+    })
+    // - home content click 
 
 
 });

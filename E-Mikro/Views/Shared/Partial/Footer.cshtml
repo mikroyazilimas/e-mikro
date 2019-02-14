@@ -1,9 +1,16 @@
 ﻿@Html.Partial(Paths.Views.Partial.SocialLinks)
 <footer>
     <div class="content">
-        @Html.Partial(Paths.Views.Partial.FooterLinks)
+        <!--   @Html.Partial(Paths.Views.Partial.FooterLinks) -->
         <div class="text">
             © @Html.Raw(DateTime.Now.Year) - Tüm hakları Mikro Yazılımevi A.Ş.’ ye aittir.
+        </div>
+        <div class="siteMap"><a href="#">Site Haritası</a></div>
+        <div class="footerSocailLink">
+            <a href="https://www.facebook.com/mikroyazilimas" target="_blank"><img src="/assets/images/icon/facebook.svg"></a>
+            <a href="https://twitter.com/mikroyazilimas" target="_blank"><img src="/assets/images/icon/twitter.svg"></a>
+            <a href="https://www.linkedin.com/company/2955583/?trk=tyah&amp;trkInfo=clickedVertical%3Acompany%2CclickedEntityId%3A2955583%2Cidx%3A1-1-1%2CtarId%3A1445523595929%2Ctas%3AMikro%20Y"><img src="/assets/images/icon/linkedin.svg"></a>
+            <a href="https://www.youtube.com/channel/UCWSwAVu6dwATfiTAo6KYAvg"><img src="/assets/images/icon/youtube.svg"></a>
         </div>
     </div>
 </footer>

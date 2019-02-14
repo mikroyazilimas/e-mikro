@@ -6,9 +6,9 @@
 
 @helper RenderRootLevelNode(Menu item, List<Product> products)
 {
-    <h3 @(!String.IsNullOrEmpty(item.Link) ? Html.Raw("onclick=\"location.href='" + item.Link + "'\" style=\"cursor:pointer\"") : Html.Raw(""))>
+    <div class="h3" @(!String.IsNullOrEmpty(item.Link) ? Html.Raw("onclick=\"location.href='" + item.Link + "'\" style=\"cursor:pointer\"") : Html.Raw(""))>
         @(item.Title)
-    </h3>
+    </div>
     if (item.Pages != null && item.Pages.Count > 0)
     {
         <div class="link">
