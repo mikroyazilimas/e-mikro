@@ -39,3 +39,15 @@ textarea { font-family: 'Roboto', sans-serif; }
 table { width: calc(100% - 15px); margin-right: 20px; border-spacing: 0px; }
 table td { border: 1px solid #fff; padding: 10px; }
 .productDetail .textArea a { margin-bottom: 20px; }
+.homeProduct .homeProductSlider .owl-stage .owl-item {
+    opacity: 1 !important ;
+}
+.productRequest { box-sizing:border-box; }
+
+@media screen and (min-width: 0px) and (max-width: 680px) {
+    .productRequest.active {
+        overflow-x: scroll;
+        top: 80px;
+        height: calc( 100% - 80px );
+    }
+}

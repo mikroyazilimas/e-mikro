@@ -289,6 +289,7 @@ $(document).ready(function () {
     // + product request
     $(".formOpen, .productRequest .close").click(function () {
         //  $(".productRequest").toggleClass("onlyMoblile")
+        $(".productRequest").toggleClass("active");
         $(".productRequest .formOpen").slideToggle("fast");
         $(".productRequest #formArea").slideToggle();
         //  $("html, body").animate({ scrollTop: $('#formArea').offset().top }, 1000);
